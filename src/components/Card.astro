@@ -1,0 +1,39 @@
+---
+interface Props {
+	imgSrc: string;
+	clientName: string;
+	position: string;
+	title: string;
+	text: string;
+	colspan?: string;
+	rowspan?: string;
+}
+
+const { imgSrc, clientName, position, title, text, colspan, rowspan } = Astro.props;
+---
+
+<article class="bg-primary-moderate-violet px-10 py-6 text-white rounded-lg col-span-2">
+	
+	<div class="flex flex-x-4 items-center">
+		<img 
+			class="w-10 h-10 border-2 border-white rounded-full" 
+			src={imgSrc}
+			alt="user"
+		>
+		<div class="ml-3 text-sm">
+			<p class="font-bold">{clientName}</p>
+			<span class="text-neutral-light-gray">
+				{position}
+			</span>
+		</div>
+	</div>
+
+	<h3 class="mt-4 text-xl font-medium">
+		{title}
+	</h3>
+	<p class="mt-4 text-sm text-neutral-light-g-blue">
+		{text}
+	</p>
+	
+</article>
+
