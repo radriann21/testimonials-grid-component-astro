@@ -7,12 +7,17 @@ interface Props {
 	text: string;
 	colspan?: string;
 	rowspan?: string;
+	color?: string;
+	titleColor?: string;
+	textColor?: string;
+	background: string;
+	usernameColor?: string;
 }
 
-const { imgSrc, clientName, position, title, text, colspan, rowspan } = Astro.props;
+const { imgSrc, clientName, position, title, text, colspan, rowspan, color, background, titleColor, textColor, usernameColor } = Astro.props;
 ---
 
-<article class="bg-primary-moderate-violet px-10 py-6 text-white rounded-lg col-span-2">
+<article class=`${background} ${color} px-10 py-6 text-white rounded-lg ${colspan} ${rowspan} shadow-xl`>
 	
 	<div class="flex flex-x-4 items-center">
 		<img 
@@ -21,17 +26,17 @@ const { imgSrc, clientName, position, title, text, colspan, rowspan } = Astro.pr
 			alt="user"
 		>
 		<div class="ml-3 text-sm">
-			<p class="font-bold">{clientName}</p>
+			<p class=`font-bold ${usernameColor}`>{clientName}</p>
 			<span class="text-neutral-light-gray">
 				{position}
 			</span>
 		</div>
 	</div>
 
-	<h3 class="mt-4 text-xl font-medium">
+	<h3 class=`mt-4 text-xl font-medium ${titleColor}`>
 		{title}
 	</h3>
-	<p class="mt-4 text-sm text-neutral-light-g-blue">
+	<p class=`mt-4 text-sm ${textColor}`>
 		{text}
 	</p>
 	
