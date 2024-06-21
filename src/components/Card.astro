@@ -10,28 +10,28 @@ interface Props {
 	color?: string;
 	titleColor?: string;
 	textColor?: string;
-	background: string;
 	usernameColor?: string;
+	background: string;
 }
 
 const { imgSrc, clientName, position, title, text, colspan, rowspan, color, background, titleColor, textColor, usernameColor } = Astro.props;
 ---
 
-<article class=`${background} ${color} px-10 py-6 text-white rounded-lg ${colspan} ${rowspan} shadow-xl`>
+<article class=`${background} ${color} px-6 md:px-10 py-6 text-white rounded-lg ${colspan} ${rowspan} shadow-xl`>
 	
-	<div class="flex flex-x-4 items-center">
+	<section class="flex flex-x-4 items-center">
 		<img 
 			class="w-10 h-10 border-2 border-white rounded-full" 
 			src={imgSrc}
 			alt="user"
 		>
-		<div class="ml-3 text-sm">
+		<section class="ml-3 text-sm">
 			<p class=`font-bold ${usernameColor}`>{clientName}</p>
 			<span class="text-neutral-light-gray">
 				{position}
 			</span>
-		</div>
-	</div>
+		</section>
+	</section>
 
 	<h3 class=`mt-4 text-xl font-medium ${titleColor}`>
 		{title}
